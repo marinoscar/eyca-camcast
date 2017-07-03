@@ -20,13 +20,13 @@ namespace eyca.core.Data
 
         public IEnumerable<Item> GetActiveItems()
         {
-            var filter = TableQuery.GenerateFilterConditionForBool("IsEnabled", "equals", true);
+            var filter = TableQuery.GenerateFilterConditionForBool("IsDisabled", "equals", true);
             var res = Client.RunQuery(new TableQuery().Where(filter)).ToList();
             return res.Select(i => new Item()
             {
                 Id = i.RowKey,
                 Type = i.PartitionKey,
-                IsEnabled = i["IsEnabled"].BooleanValue.Value,
+                IsDisabled = i["IsDisabled"].BooleanValue.Value,
                 Value = i["Value"].StringValue,
                 RowKey = i.RowKey,
                 PartitionKey = i.PartitionKey

@@ -28,7 +28,7 @@ namespace eyca.core.Models
 
         public string Id { get; set; }
         public string Type { get; set; }
-        public bool IsEnabled { get; set; }
+        public bool IsDisabled { get; set; }
         public string Value { get; set; }
 
         public static string NewId()
