@@ -1,0 +1,43 @@
+﻿@model List<eyca.core.Models.Contact>
+@{
+    ViewBag.Title = "Contacts to Process";
+    Layout = "~/Views/Shared/_AddItem.cshtml";
+}
+
+<h2>List</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <table id="contact-table" class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr id="@string.Format("row-", c.Id)">
+                        <td>@c.Id</td>
+                        <td>@c.Name</td>
+                        <td>@c.LastName</td>
+                        <td>@c.Email</td>
+                        <td>@c.CompanyName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <form id="updateForm" method="post" action="/Contact/UpdateAll">
+            <input type="hidden" id="ids" name="ids" value="@string.Join(",", Model.Select(i => i.Id))" />
+            <button type="submit" class="btn btn-primary">Mark All As Processed</button>
+        </form>
+    </div>
+</div>
+

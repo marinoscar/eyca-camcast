@@ -20,7 +20,7 @@ namespace eyca.core.Data
 
         public IEnumerable<Item> GetActiveItems()
         {
-            var filter = TableQuery.GenerateFilterConditionForBool("IsDisabled", "equals", true);
+            var filter = TableQuery.GenerateFilterConditionForBool("IsDisabled", "eq", false);
             var res = Client.RunQuery(new TableQuery().Where(filter)).ToList();
             return res.Select(i => new Item()
             {
@@ -45,6 +45,22 @@ namespace eyca.core.Data
             InsertOrReplace(item);
         }
 
+        public List<Contact> GetActiveContacts()
+        {
+            var items = GetActiveItems();
+            return items.Select(i => Contact.FromItem(i)).ToList();
+        }
+
+
+        public void UpdateAllContactsAsDisabled(List<string> ids)
+        {
+            foreach(var id in ids)
+            {
+                var item = Client.GetById(id, "Contact");
+                item.IsDisabled = true;
+                InsertOrReplace(item);
+            }
+        }
 
 
     }
