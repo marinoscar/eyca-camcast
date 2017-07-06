@@ -38,6 +38,13 @@ namespace eyca.core.Data
             Client.InsertOrReplace(item);
         }
 
+        public void AddContact(Contact contact)
+        {
+            contact.Id = Item.NewId();
+            var item = contact.ToItem();
+            InsertOrReplace(item);
+        }
+
 
 
     }
