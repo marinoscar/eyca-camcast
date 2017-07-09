@@ -218,6 +218,7 @@
     <Content Include="Views\Shared\_Contact.cshtml" />
     <Content Include="Views\Invoice\Index.cshtml" />
     <Content Include="Views\Invoice\Add.cshtml" />
+    <Content Include="Views\Invoice\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

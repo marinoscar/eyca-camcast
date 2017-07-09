@@ -28,5 +28,25 @@ namespace eyca.web.Controllers
             if (string.IsNullOrWhiteSpace(id) || id == "undefined") id = "03";
             return View(new ImageInfo() { ImageId = id });
         }
+
+        [AcceptVerbs("POST")]
+        public ActionResult Process(Invoice invoice)
+        {
+            _repo.AddInvoice(invoice);
+            return Redirect("/Home");
+        }
+
+        public ActionResult List()
+        {
+            var invoices = _repo.GetActiveInvoices();
+            return View(invoices);
+        }
+
+        public ActionResult UpdateAll(string ids)
+        {
+            var idList = ids.Split(",".ToArray()).ToList();
+            _repo.UpdateAllInvoicesAsDisabled(idList);
+            return RedirectToAction("List");
+        }
     }
 }

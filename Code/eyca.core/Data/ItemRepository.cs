@@ -18,9 +18,9 @@ namespace eyca.core.Data
 
         public ITableClient<Item> Client { get; private set; }
 
-        public IEnumerable<Item> GetActiveItems()
+        public IEnumerable<Item> GetActiveItems(string type)
         {
-            var filter = TableQuery.GenerateFilterConditionForBool("IsDisabled", "eq", false);
+            var filter = TableQuery.CombineFilters(TableQuery.GenerateFilterConditionForBool("IsDisabled", "eq", false), "and", TableQuery.GenerateFilterCondition("Type", "eq", type));
             var res = Client.RunQuery(new TableQuery().Where(filter)).ToList();
             return res.Select(i => new Item()
             {
@@ -32,6 +32,7 @@ namespace eyca.core.Data
                 PartitionKey = i.PartitionKey
             });
         }
+
 
         public void InsertOrReplace(Item item)
         {
@@ -45,18 +46,41 @@ namespace eyca.core.Data
             InsertOrReplace(item);
         }
 
+        public void AddInvoice(Invoice invoice)
+        {
+            invoice.Id = Item.NewId();
+            var item = invoice.ToItem();
+            InsertOrReplace(item);
+        }
+
         public List<Contact> GetActiveContacts()
         {
-            var items = GetActiveItems();
-            return items.Select(i => Contact.FromItem(i)).ToList();
+            var items = GetActiveItems("Contact");
+            return items.Select(i => Contact.ContactFromItem(i)).ToList();
+        }
+
+        public List<Invoice> GetActiveInvoices()
+        {
+            var items = GetActiveItems("Invoice");
+            return items.Select(i => Invoice.InvoiceFromItem(i)).ToList();
         }
 
 
         public void UpdateAllContactsAsDisabled(List<string> ids)
         {
-            foreach(var id in ids)
+            UpdateAllItemsAsDisabled(ids, "Contact");
+        }
+
+        public void UpdateAllInvoicesAsDisabled(List<string> ids)
+        {
+            UpdateAllItemsAsDisabled(ids, "Invoice");
+        }
+
+        public void UpdateAllItemsAsDisabled(List<string> ids, string type)
+        {
+            foreach (var id in ids)
             {
-                var item = Client.GetById(id, "Contact");
+                var item = Client.GetById(id, type);
                 item.IsDisabled = true;
                 InsertOrReplace(item);
             }

@@ -17,7 +17,7 @@ namespace eyca.core.Models
         public bool IsDisabled { get; set; }
         public bool IsEnglish { get; set; }
 
-        public static Contact FromItem(Item item)
+        public static Contact ContactFromItem(Item item)
         {
             var contact = JsonConvert.DeserializeObject<Contact>(item.Value);
             contact.Id = item.Id;
@@ -27,16 +27,20 @@ namespace eyca.core.Models
 
         public Item ToItem()
         {
-            var type = "Contact";
             return new Item()
             {
-                Type = type,
+                Type = GetItemType(),
                 Id = Id,
                 IsDisabled = IsDisabled,
                 RowKey = Id,
-                PartitionKey = type,
+                PartitionKey = GetItemType(),
                 Value = JsonConvert.SerializeObject(this)
             };
+        }
+
+        protected virtual string GetItemType()
+        {
+            return "Contact";
         }
 
     }
