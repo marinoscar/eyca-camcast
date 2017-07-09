@@ -1,5 +1,6 @@
 ﻿using eyca.core.Data;
 using eyca.core.Models;
+using eyca.web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,12 @@ namespace eyca.web.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Add(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id) || id == "undefined") id = "03";
+            return View(new ImageInfo() { ImageId = id });
         }
     }
 }

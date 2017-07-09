@@ -6,58 +6,72 @@
 
 @section Scripts{
     <script type="text/javascript">
-        $(document).ready(function (){
+        $(document).ready(function () {
             $('#carousel-example-generic').carousel();
+            $('img').on('click', function () {
+                var code = $(this).data('image-code');
+                location.href = '/Invoice/Add?id=' + code;
+            });
         });
     </script>
 }
 
 
 <div class="page-header">
-    <h1>Enter your information and select the invoice for the robot</h1>
+    <h1>Tap on the invoice you want to use</h1>
 </div>
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/Content/Images/01.jpg" alt="...">
-            <div class="carousel-caption">
-                This is the item
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/Content/Images/02.jpg" alt="...">
-            <div class="carousel-caption">
-                Second item
-            </div>
-        </div>
-    </div>
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-<form id="contact-form" class="form-horizontal" method="post" action="/Contact/Add" role="form">
-    @Html.Partial("_Contact")
-    <div style="height:25px;"></div>
-    <div class="form-group form-group-lg">
-        <button type="submit" class="btn btn-lg btn-defaul btn-custom">Submit</button>
-    </div>
-</form>
 <div class="row">
     <div class="col-lg-12">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="~/Content/Images/01_s.jpg" alt="..." data-image-code="01">
+                    <div class="carousel-caption">
+                        Tap to use this invoice
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/Content/Images/02_s.jpg" alt="..." data-image-code="02">
+                    <div class="carousel-caption">
+                        Tap to use this invoice
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/Content/Images/03_s.jpg" alt="..." data-image-code="03">
+                    <div class="carousel-caption">
+                        Tap to use this invoice
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/Content/Images/04_s.jpg" alt="..." data-image-code="04">
+                    <div class="carousel-caption">
+                        Tap to use this invoice
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <p><a href="/Home/Index" class="btn btn-defaul btn-lg">Return</a></p>
     </div>
 </div>

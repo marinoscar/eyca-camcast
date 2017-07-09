@@ -33,3 +33,7 @@
     border-color: #ffe600 !important;
     color: #333333 !important;
 }
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
