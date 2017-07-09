@@ -1,4 +1,11 @@
-﻿
+﻿body
+{
+    font-family: "Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #f0f0f0;
+}
 
 .header {
     background-color: #333;
@@ -24,12 +31,131 @@
 }
 
 .nav-bar-custom{
-    height: 76px;
+    height: 52px;
     background-color: #333;
+    border-bottom: 1px solid #c0c0c0;
+    height: 56px;
+    color: #fff;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-bottom: 1px solid #e4e5e7;
 }
 
-.btn-custom {
-    background-color: #ffe600 !important; 
-    border-color: #ffe600 !important;
-    color: #333333 !important;
+
+
+
+.navbar-brand-custom
+{
+    padding: 5px 15px;
+}
+
+.ey-logo {
+    background-image: url(Images/EY_Logo.png);
+    height: 40px;
+    width: 46px;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 60px;
+    min-height: 60px;
+    background-color: #333;
+    border-color: #080808;
+   
+}
+
+.content-container {
+    padding-bottom: 60px !important;
+    padding-top: 60px !important;
+}
+.panel-custom
+{
+    border-radius:0px;
+    border-color: #ddd;
+}
+
+.btn-custom
+{
+    margin-right: 5px;
+    background-color: #ffe600;
+    border-color: #ffe600;
+    color: #333333 ;
+    border-bottom: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    border-radius: 0px;
+}
+
+.btn-custom:active,
+.btn-custom:hover,
+.btn-custom:active:focus
+{
+   background-color: #ffe600;
+  border-color: #ffe600;
+  color: #333333 ;
+  border-bottom: 1px solid #999999;
+  border-right: 1px solid #999999;
+}
+
+.form-group-custom {
+    margin-right: 20px!important;
+    margin-left: 20px!important;
+
+}
+
+.form-control-custom
+{
+    border-radius: 0px;
+}
+.modal-header {
+  padding: 40px 30px;
+  background: #333;
+}
+
+
+.table-custom
+{
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+
+.table-custom > thead > tr > td, .table-custom > tbody > tr > td, .table-custom > tfoot > tr > td {
+    padding: 0px; 
+ }
+
+
+.table-custom > thead > tr > th {
+    padding: 5px 0px 5px 0px;  
+
+ } 
+
+.table-custom > thead > tr> td, .table-custom > thead > tr> th {
+    
+     padding: 8px 5px 8px 0px;  
+    background-color: #c0c0c0;
+    font-weight: bold;
+    vertical-align: top;
+    text-align: center;
+
+ } 
+.table-custom > thead > tr {
+
+    background-color: #c0c0c0;
+
+ } 
+
+ .table-custom > tbody > tr > td {
+   padding: 5px 2px 5px 2px;  
+    background-color: #fff;
+    text-align: center;
+ } 
+
+ .table-custom th:first-child,  .table-custom td:first-child {
+    text-align: left;
+    padding-left: 10px;
 }

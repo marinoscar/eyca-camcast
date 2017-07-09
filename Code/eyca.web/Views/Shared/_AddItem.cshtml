@@ -12,17 +12,27 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <nav class="navbar navbar-default nav-bar-custom">
+    <nav class="navbar navbar-default nav-bar-custom ">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <img alt="Brand" class="ey-logo" src="~/Content/logo.png">
+                <a class="navbar-brand navbar-brand-custom " href="#">
+                    <span class="ey-logo"></span>
                 </a>
             </div>
         </div>
     </nav>
-    <div class="container">
-        @RenderBody()
+    <div class="container content-container">
+        <div class="row">
+            <div class="panel panel-custom">
+                @RenderBody()
+            </div>            
+        </div>
+        
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted text-right"> EY 2017</p>
+        </div>
+    </footer>
 </body>
 </html>
