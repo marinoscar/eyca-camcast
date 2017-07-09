@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Thanks";
+    Layout = "~/Views/Shared/_AddItem.cshtml";
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                location.href = '/Home/Index';
+            }, 5000)
+        });
+    </script>
+}
+
+<div class="jumbotron">
+    <h1>Thanks</h1>
+    <p class="lead">Now you can see the robot executing the action in one of our screens.</p>
+    <p class="lead">Enjoy!</p>
+    <div style="height:50px;"></div>
+    <p><a href="/Home/Index" class="btn btn-custom btn-lg">Ok</a></p>
+</div>
+

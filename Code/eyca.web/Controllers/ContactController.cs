@@ -27,7 +27,7 @@ namespace eyca.web.Controllers
         public ActionResult Add(Contact contact )
         {
             _repo.AddContact(contact);
-            return Redirect("/Home");
+            return Redirect("/Home/Thanks");
         }
 
         public ActionResult List()

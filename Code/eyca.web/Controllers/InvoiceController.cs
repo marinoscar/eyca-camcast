@@ -33,7 +33,7 @@ namespace eyca.web.Controllers
         public ActionResult Process(Invoice invoice)
         {
             _repo.AddInvoice(invoice);
-            return Redirect("/Home");
+            return Redirect("/Home/Thanks");
         }
 
         public ActionResult List()

@@ -26,5 +26,10 @@ namespace eyca.web.Controllers
 
             return View();
         }
+
+        public ActionResult Thanks()
+        {
+            return View();
+        }
     }
 }
