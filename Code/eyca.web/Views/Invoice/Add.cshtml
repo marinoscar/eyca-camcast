@@ -6,7 +6,7 @@
 
 <div class="page-header">
     <h1>Enter the information for the Robot</h1>
-    <small>You are about to process image @Model</small>
+    <h3>You are about to process image @Model</h3>
 </div>
 <form id="contact-form" class="form-horizontal" method="post" action="/Invoice/Process" role="form">
     @Html.Partial("_Contact")
@@ -14,7 +14,7 @@
     <div style="height:25px;"></div>
     <div class="form-group form-group-lg">
         <button type="submit" class="btn btn-lg btn-defaul btn-custom">Submit</button>
-        <p><a href="/Home/Index" class="btn btn-defaul btn-lg">Return</a></p>
+        <a href="/Home/Index" class="btn btn-default btn-lg">Return</a>
     </div>
 </form>
 
