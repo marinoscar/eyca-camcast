@@ -1,24 +1,35 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+
+.header {
+    background-color: #333;
+    border-bottom: 1px solid #c0c0c0;
+    height: 56px;
+    color: #fff;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.ey-logo {
+    height: 40px;
+    width: 46px;
+    background-repeat: no-repeat;
+    display: block;
+    /* margin: auto; */
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.logo {
+    float: left;
+    width: 100px;
+    background-color: #333;
+    padding: 8px 15px 18px 28px;
+    text-align: center;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.nav-bar-custom{
+    height: 76px;
+    background-color: #333;
+}
+
+.btn-custom {
+    background-color: #ffe600 !important; 
+    border-color: #ffe600 !important;
+    color: #333333 !important;
 }
