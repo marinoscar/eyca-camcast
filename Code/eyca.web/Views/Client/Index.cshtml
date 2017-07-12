@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AddItem.cshtml";
+}
+
+<div class="page-header">
+    <h1>Enter the information for Client</h1>
+</div>
+<form id="contact-form" class="form-horizontal" method="post" action="/Client/Add" role="form">
+    @Html.Partial("_Contact")
+    <div class="form-group form-group-custom">
+        <label class="control-label" for="inputCompany">Area</label>
+        <input type="text" class="form-control form-control-custom" name="Area" id="inputArea" placeholder="Area" required>
+    </div>
+
+    <div style="height:25px;"></div>
+    <div class="form-group form-group-lg">
+        <button type="submit" class="btn btn-lg btn-defaul btn-custom">Submit</button>
+        <a href="/Client/Index" class="btn btn-default btn-lg">Cancel</a>
+    </div>
+</form>
+
+

@@ -46,6 +46,13 @@ namespace eyca.core.Data
             InsertOrReplace(item);
         }
 
+        public void AddClient(Client client)
+        {
+            client.Id = Item.NewId();
+            var item = client.ToItem();
+            InsertOrReplace(item);
+        }
+
         public void AddInvoice(Invoice invoice)
         {
             invoice.Id = Item.NewId();
