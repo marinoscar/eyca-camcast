@@ -22,8 +22,8 @@ namespace eyca.web.Controllers
         public InvoiceController()
         {
             _repo = new ItemRepository(new TableClient<Item>("items"));
-            ViewBag.WelcomeMessage = "Welcome to our EY Invoice Recognition Bot!";
-            ViewBag.WelcomeSubtitle = "Would you like to see how I identify and summarize information from a particular invoice?";
+            ViewBag.WelcomeMessage = "Welcome to our EY Invoice Recognition Bot!".ToUpperInvariant();
+            ViewBag.WelcomeSubtitle = "Would you like to see how I identify and summarize information from a particular invoice?".ToUpperInvariant();
             ViewBag.WelcomeLink = "/Invoice";
             ViewBag.HomeUrl = "/Invoice/Home";
         }

@@ -15,8 +15,8 @@ namespace eyca.web.Controllers
         public ContactController()
         {
             _repo = new ItemRepository(new TableClient<Item>("items"));
-            ViewBag.WelcomeMessage = "Welcome to our EY Digital CoE information Bot! ";
-            ViewBag.WelcomeSubtitle = "Would you like to receive more information on our capabilities and see me in action?";
+            ViewBag.WelcomeMessage = "Welcome to our EY Digital CoE information Bot!".ToUpperInvariant();
+            ViewBag.WelcomeSubtitle = "Would you like to receive more information on our capabilities and see me in action?".ToUpperInvariant();
             ViewBag.WelcomeLink = "/Contact";
             ViewBag.HomeUrl = "/Contact/Home";
         }
