@@ -16,6 +16,8 @@ namespace eyca.core.Models
         public string Email { get; set; }
         public bool IsDisabled { get; set; }
         public bool IsEnglish { get; set; }
+        public int MinValue { get; set; }
+        public int MaxValue { get; set; }
 
         public static Contact ContactFromItem(Item item)
         {

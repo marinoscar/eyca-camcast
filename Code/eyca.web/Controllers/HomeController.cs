@@ -8,6 +8,11 @@ namespace eyca.web.Controllers
 {
     public class HomeController : Controller
     {
+
+        public HomeController()
+        {
+            ViewBag.HomeUrl = "/Home/Index";
+        }
         public ActionResult Index()
         {
             return View();
@@ -27,8 +32,12 @@ namespace eyca.web.Controllers
             return View();
         }
 
-        public ActionResult Thanks()
+        public ActionResult Thanks(int src)
         {
+            var url = "/Home/Index";
+            if (src == 1) url = "/Contact/Home";
+            if (src == 2) url = "/Invoice/Home";
+            ViewBag.HomeUrl = url;
             return View();
         }
     }

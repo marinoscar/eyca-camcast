@@ -37,3 +37,12 @@
 .carousel-inner > .item > img {
     margin: 0 auto;
 }
+
+img.bot-size {
+  width:186px;
+  height:355px;
+}
+
+.custom-size{
+    width: 150px;
+}

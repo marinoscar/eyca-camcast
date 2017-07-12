@@ -15,6 +15,10 @@ namespace eyca.web.Controllers
         public ContactController()
         {
             _repo = new ItemRepository(new TableClient<Item>("items"));
+            ViewBag.WelcomeMessage = "Welcome to our EY Digital CoE information Bot! ";
+            ViewBag.WelcomeSubtitle = "Would you like to receive more information on our capabilities and see me in action?";
+            ViewBag.WelcomeLink = "/Contact";
+            ViewBag.HomeUrl = "/Contact/Home";
         }
 
         // GET: Contact
@@ -27,7 +31,7 @@ namespace eyca.web.Controllers
         public ActionResult Add(Contact contact )
         {
             _repo.AddContact(contact);
-            return Redirect("/Home/Thanks");
+            return Redirect("/Home/Thanks?src=1");
         }
 
         public ActionResult List()
@@ -41,6 +45,11 @@ namespace eyca.web.Controllers
             var idList = ids.Split(",".ToArray()).ToList();
             _repo.UpdateAllContactsAsDisabled(idList);
             return RedirectToAction("List");
+        }
+
+        public ActionResult Home()
+        {
+            return View();
         }
     }
 }

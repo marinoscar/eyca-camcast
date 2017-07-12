@@ -161,6 +161,7 @@
     <Content Include="Content\Images\02_s.jpg" />
     <Content Include="Content\Images\03_s.jpg" />
     <Content Include="Content\Images\04_s.jpg" />
+    <Content Include="Content\Images\bot.png" />
     <Content Include="Content\logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -220,6 +221,9 @@
     <Content Include="Views\Invoice\Add.cshtml" />
     <Content Include="Views\Invoice\List.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
+    <Content Include="Views\Invoice\Home.cshtml" />
+    <Content Include="Views\Shared\_Welcome.cshtml" />
+    <Content Include="Views\Contact\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

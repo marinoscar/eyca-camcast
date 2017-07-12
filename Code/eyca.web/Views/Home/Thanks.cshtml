@@ -8,7 +8,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             setTimeout(function () {
-                location.href = '/Home/Index';
+                location.href = '@ViewBag.HomeUrl';
             }, 5000)
         });
     </script>
@@ -19,6 +19,6 @@
     <p class="lead">Now you can see the robot executing the action in one of our screens.</p>
     <p class="lead">Enjoy!</p>
     <div style="height:50px;"></div>
-    <p><a href="/Home/Index" class="btn btn-custom btn-lg">Ok</a></p>
+    <p><a href="@ViewBag.HomeUrl" class="btn btn-custom btn-lg">Ok</a></p>
 </div>
 
