@@ -56,7 +56,7 @@ namespace eyca.web.Controllers
         {
             var invoices = _repo.GetActiveInvoices();
             var result = !invoices.Any();
-            return Json(result);
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult UpdateAll(string ids)

@@ -44,7 +44,7 @@ namespace eyca.web.Controllers
         {
             var contacts = _repo.GetActiveContacts();
             var result = !contacts.Any();
-            return Json(result);
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult UpdateAll(string ids)
