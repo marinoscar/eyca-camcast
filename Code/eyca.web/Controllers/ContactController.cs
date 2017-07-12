@@ -40,6 +40,13 @@ namespace eyca.web.Controllers
             return View(contacts);
         }
 
+        public JsonResult IsEmpty()
+        {
+            var contacts = _repo.GetActiveContacts();
+            var result = !contacts.Any();
+            return Json(result);
+        }
+
         public ActionResult UpdateAll(string ids)
         {
             var idList = ids.Split(",".ToArray()).ToList();

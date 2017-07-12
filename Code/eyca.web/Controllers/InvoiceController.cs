@@ -52,6 +52,13 @@ namespace eyca.web.Controllers
             return View(invoices);
         }
 
+        public JsonResult IsEmpty()
+        {
+            var invoices = _repo.GetActiveInvoices();
+            var result = !invoices.Any();
+            return Json(result);
+        }
+
         public ActionResult UpdateAll(string ids)
         {
             var idList = ids.Split(",".ToArray()).ToList();
